@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.workintech.s17d2.model.*;
 import com.workintech.s17d2.rest.DeveloperController;
 import com.workintech.s17d2.tax.DeveloperTax;
+import com.workintech.s17d2.model.Developer;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,19 +51,15 @@ class MainTest {
         
         Developer developer = new Developer(expectedId, expectedName, expectedSalary, expectedExperience);
 
-        
         int actualId = developer.getId();
         String actualName = developer.getName();
         double actualSalary = developer.getSalary();
         Experience actualExperience = developer.getExperience();
 
-        
         assertEquals(expectedId, actualId, "The ID should match the expected value.");
         assertEquals(expectedName, actualName, "The name should match the expected value.");
         assertEquals(expectedSalary, actualSalary, "The salary should match the expected value.");
         assertEquals(expectedExperience, actualExperience, "The experience should match the expected value.");
-
-
     }
 
     @Test
